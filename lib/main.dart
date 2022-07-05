@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:bluetooth_obd/bluetooth_obd.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +13,19 @@ class MyApp extends StatelessWidget {
 //여기까지 기본 세팅
 
     return MaterialApp(
-      title: 'Welcome to Flutter',
+      title: 'MDL Speed application',
+
+        static Future<String> get startOBD async {
+        final String startOBDMesg = await _channel.invokeMethod('startOBD');
+        return startOBDMesg;
+        }
+
+        static Future<String> get getSpeed async {
+        final String tripRecords = await _channel.invokeMethod('getSpeed');
+        return tripRecords;
+        }
+
+
       home: Scaffold(
         appBar: AppBar( leading : Icon(Icons.directions_car_filled),
           title: Text('MDL 어플개발'),
