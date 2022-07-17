@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
 
       home: Scaffold(
         appBar: AppBar( leading : Icon(Icons.directions_car_filled),
-          title: Text('MDL 어플개발'),
+          title: Text('MDL 어플개발짱짱'),
         ),
 
         body: Center(
